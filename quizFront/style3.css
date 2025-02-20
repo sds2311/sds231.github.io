@@ -1,0 +1,33 @@
+body {
+    background-image: url('images/Temple.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: cursive;
+    color: #7000;
+    text-align: center;
+    margin: 0;
+    min-height: 100vh;
+    padding: 0;
+}
+img {
+    padding: 10px 20px;
+    margin: 50px auto;
+    display: block;
+}
+
+.main {
+    padding: 10px 20px;
+    margin: 20px auto;
+    background-color: rgb(131, 98, 16);
+    border: 1px solid rgb(2, 2, 2);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+
+}
+
+.main:hover {
+    background-color: #0bef2d;
+}

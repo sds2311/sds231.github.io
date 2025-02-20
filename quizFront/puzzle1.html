@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temple Escape Game</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div class="lives-container">
+        Lives: <span id="current-score">3</span>/3
+    </div>
+
+    <h1>PUZZLE 1</h1>
+    <div class="puzzle">
+        <img src="images/puzzle1.png" alt="puzzle title">
+        <input type="text" id="guess">
+        <img src="images/help1.png" alt="puzzle title">
+        <input type="text" id="help">
+    </div>
+
+    <div id="decoder" style="display: none;">
+        <img src="images/pigpen.png" alt="decoder">
+    </div>
+
+    <script>
+        let score = 3;
+    const scoreElement = document.getElementById('current-score');
+    const helpInput = document.getElementById('help');
+    const guessInput = document.getElementById('guess');
+    const decoder = document.getElementById('decoder');
+
+    helpInput.addEventListener('keyup', function(event) {
+    if (event.key === 'Enter') {
+        checkHelp(this);
+    }
+    });
+
+    guessInput.addEventListener('keyup', function(event) {
+    if (event.key === 'Enter') {
+        checkAnswer(this);
+    }
+    });
+
+    function checkHelp(input) {
+        const correctAns = 'pigpen';
+        const isCorrect = input.value.toLowerCase() === correctAns;
+        if(isCorrect)
+        {
+            decoder.style.display = 'block';
+        }
+        else
+        {
+            score = Math.max(0, score - 1);
+            scoreElement.textContent = score;
+            if(score <= 0) {
+            window.location.href = 'gameover.html';
+        }
+        }
+        return isCorrect;
+    }
+
+    function checkAnswer(input) {
+        const correctAns = 'fire';
+        const isCorrect = input.value.toLowerCase() === correctAns;
+        if(isCorrect)
+        {
+            window.location.href = 'puzzle2.html';
+        }
+        else
+        {
+            score = Math.max(0, score - 1);
+            scoreElement.textContent = score;
+            if(score <= 0) {
+            window.location.href = 'gameover.html';
+        }
+        }
+        return isCorrect;
+    }
+    </script>
+</body>
+</html>

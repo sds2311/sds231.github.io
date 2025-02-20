@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temple Escape Game</title>
+    <link rel="stylesheet" href="style4.css">
+</head>
+<body>
+    <div class="lives-container">
+        Lives: <span id="current-lives">3</span>/3
+    </div>
+
+    <h1>PUZZLE 2</h1>
+    <img class="instructions-image" src="images/statuePuzzle.png" alt="instructions">
+    <div class="puzzle">
+        <img src="images/acid.png" alt="acid god">
+        <img src="images/witchcraft.png" alt="witchcraft god">
+        <img src="images/knowledge.png" alt="knowledge god">
+        <img src="images/vines.png" alt="vines god">
+        <img src="images/deserts.png" alt="deserts god">
+    </div>
+    <div class="wrapper-container">
+        <div class="statue1">
+            <div class="button-container">
+                <button onclick="checkAnswer(this, 'Knowledge')">Knowledge</button>
+                <button onclick="checkAnswer(this, 'Vines')">Vines</button>
+                <button onclick="checkAnswer(this, 'Witchcraft')">Witchcraft</button>
+                <button onclick="checkAnswer(this, 'Deserts')">Deserts</button>
+                <button class="correct" onclick="checkAnswer(this, 'Acid')">Acid</button>
+            </div>
+        </div>
+
+        <div class="statue2">
+            <div class="button-container">
+                <button onclick="checkAnswer(this, 'Knowledge')">Knowledge</button>
+                <button onclick="checkAnswer(this, 'Vines')">Vines</button>
+                <button class="correct" onclick="checkAnswer(this, 'Witchcraft')">Witchcraft</button>
+                <button onclick="checkAnswer(this, 'Deserts')">Deserts</button>
+                <button onclick="checkAnswer(this, 'Acid')">Acid</button>
+            </div>
+        </div>
+
+        <div class="statue3">
+            <div class="button-container">
+                <button class="correct" onclick="checkAnswer(this, 'Knowledge')">Knowledge</button>
+                <button onclick="checkAnswer(this, 'Vines')">Vines</button>
+                <button onclick="checkAnswer(this, 'Witchcraft')">Witchcraft</button>
+                <button onclick="checkAnswer(this, 'Deserts')">Deserts</button>
+                <button onclick="checkAnswer(this, 'Acid')">Acid</button>
+            </div>
+        </div>
+
+        <div class="statue4">
+            <div class="button-container">
+                <button onclick="checkAnswer(this, 'Knowledge')">Knowledge</button>
+                <button class="correct" onclick="checkAnswer(this, 'Vines')">Vines</button>
+                <button onclick="checkAnswer(this, 'Witchcraft')">Witchcraft</button>
+                <button onclick="checkAnswer(this, 'Deserts')">Deserts</button>
+                <button onclick="checkAnswer(this, 'Acid')">Acid</button>
+            </div>
+        </div>
+
+        <div class="statue5">
+            <div class="button-container">
+                <button onclick="checkAnswer(this, 'Knowledge')">Knowledge</button>
+                <button onclick="checkAnswer(this, 'Vines')">Vines</button>
+                <button onclick="checkAnswer(this, 'Witchcraft')">Witchcraft</button>
+                <button class="correct" onclick="checkAnswer(this, 'Deserts')">Deserts</button>
+                <button onclick="checkAnswer(this, 'Acid')">Acid</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let lives = 3;
+        let score = 0;
+    const livesElement = document.getElementById('current-lives');
+
+    function checkAnswer(button, correctAns) {
+        button.classList.add("clicked");
+        const isCorrect = button.classList.contains("correct");
+        if(isCorrect)
+        {
+           score = score + 1;
+        }
+        else
+        {
+            button.classList.add("incorrect");
+            lives = Math.max(0, lives - 1);
+            livesElement.textContent = lives;
+            if(lives <= 0) {
+            window.location.href = 'gameover.html';
+        }
+        }
+        if(score == 5)
+        {
+            window.location.href = 'win.html';
+        }
+        return isCorrect;
+    }
+    </script>
+</body>
+</html>

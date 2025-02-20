@@ -1,0 +1,43 @@
+body {
+    background-image: url('images/Temple.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: cursive;
+    color: #7000;
+    text-align: center;
+    margin: 0;
+    min-height: 100vh;
+    padding: 0;
+}
+img {
+    padding: 10px 20px;
+    margin: 50px auto;
+    display: block;
+}
+
+input {
+    font-size: 1.2rem;
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid rgb(9, 9, 9);
+    text-align: center;
+}
+
+.lives-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 1000;
+    color: #040404;
+}
+
+.lives-container span {
+    color: #040404;
+}
