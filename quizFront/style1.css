@@ -1,33 +1,51 @@
 body {
     background-image: url('images/Temple.png');
-    background-size: cover;
-    background-position: center;
+    background-position: center top;
     background-repeat: no-repeat;
+    background-size: cover;
     font-family: cursive;
     color: #7000;
     text-align: center;
     margin: 0;
-    min-height: 100vh;
     padding: 0;
+}
+.music {
+    padding: 25px 50px;
+    margin: 20px 20px;
+    background-color: rgb(211, 156, 14);
+    border: 5px solid rgb(2, 2, 2);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 25px;
+    display: block;
+    filter: drop-shadow(0 0 25px rgb(71, 57, 3));
+}
+
+.music:hover {
+    background-color: #95710d;
 }
 img {
     padding: 10px 20px;
-    margin: 50px auto;
+    margin: 70px auto;
     display: block;
+    filter: drop-shadow(0 0 25px rgb(71, 57, 3));
+    transform: scale(1.5);
 }
 
 .start {
-    padding: 10px 20px;
+    padding: 30px 60px;
     margin: 20px auto;
-    background-color: rgb(131, 98, 16);
-    border: 1px solid rgb(2, 2, 2);
+    background-color: rgb(211, 156, 14);
+    border: 5px solid rgb(2, 2, 2);
     border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 35px;
     display: block;
+    filter: drop-shadow(0 0 25px rgb(71, 57, 3));
 
 }
 
 .start:hover {
-    background-color: #0bef2d;
+    background-color: #95710d;
+    filter: drop-shadow(0 0 25px rgb(71, 57, 3));
 }

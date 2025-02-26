@@ -8,7 +8,27 @@
     <link rel="stylesheet" href="style1.css">
   </head>
   <body>
-    <img src="images/title1.png" alt="title">
+    <button class="music" onclick="toggleMusic()">Play Music</button>
+    <img src="images/templeTitleFinal.png" alt="title">
     <button class="start" onclick="window.location.href='puzzle1.html'">Start</button>
+    <audio id="backgroundMusic" src="music/temple.mp3" preload="auto" loop></audio>
+  <script>
+    let musicPlay = false;
+    function toggleMusic() {
+        let music = document.getElementById("backgroundMusic");
+        let button = document.querySelector(".music");
+        if(musicPlay)
+        {
+          music.pause();
+          button.textContent = "Play Music"
+        }
+        else
+        {
+          music.play();
+          button.textContent = "Pause Music"
+        }
+        musicPlay = !musicPlay;
+    }
+  </script>
   </body>
 </html>

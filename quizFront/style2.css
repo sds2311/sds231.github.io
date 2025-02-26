@@ -1,27 +1,42 @@
 body {
     background-image: url('images/Temple.png');
     background-size: cover;
-    background-position: center;
+    background-position: center top;
     background-repeat: no-repeat;
     font-family: cursive;
     color: #7000;
     text-align: center;
     margin: 0;
-    min-height: 100vh;
     padding: 0;
+}
+.music {
+    padding: 25px 50px;
+    margin: 20px 20px;
+    background-color: rgb(211, 156, 14);
+    border: 5px solid rgb(2, 2, 2);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 25px;
+    display: block;
+    filter: drop-shadow(0 0 25px rgb(71, 57, 3));
+}
+
+.music:hover {
+    background-color: #95710d;
 }
 img {
     padding: 10px 20px;
-    margin: 50px auto;
+    margin: 5px auto;
     display: block;
+    filter: drop-shadow(0 0 25px rgb(71, 57, 3));
 }
-
 input {
     font-size: 1.2rem;
     padding: 5px;
     border-radius: 5px;
     border: 2px solid rgb(9, 9, 9);
     text-align: center;
+    margin: 50px auto;
 }
 
 .lives-container {

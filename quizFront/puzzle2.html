@@ -12,17 +12,12 @@
     </div>
 
     <h1>PUZZLE 2</h1>
-    <img class="instructions-image" src="images/statuePuzzle.png" alt="instructions">
-    <div class="puzzle">
-        <img src="images/acid.png" alt="acid god">
-        <img src="images/witchcraft.png" alt="witchcraft god">
-        <img src="images/knowledge.png" alt="knowledge god">
-        <img src="images/vines.png" alt="vines god">
-        <img src="images/deserts.png" alt="deserts god">
-    </div>
+    <button class="music" onclick="toggleMusic()">Play Music</button>
+    <img class="instructions-image" src="images/puzzle2Scroll.png" alt="instructions">
     <div class="wrapper-container">
         <div class="statue1">
             <div class="button-container">
+                <img src="images/acid.png" alt="acid god">
                 <button onclick="checkAnswer(this, 'Knowledge')">Knowledge</button>
                 <button onclick="checkAnswer(this, 'Vines')">Vines</button>
                 <button onclick="checkAnswer(this, 'Witchcraft')">Witchcraft</button>
@@ -33,6 +28,7 @@
 
         <div class="statue2">
             <div class="button-container">
+                <img src="images/witchcraft.png" alt="witchcraft god">
                 <button onclick="checkAnswer(this, 'Knowledge')">Knowledge</button>
                 <button onclick="checkAnswer(this, 'Vines')">Vines</button>
                 <button class="correct" onclick="checkAnswer(this, 'Witchcraft')">Witchcraft</button>
@@ -43,6 +39,7 @@
 
         <div class="statue3">
             <div class="button-container">
+                <img src="images/knowledge.png" alt="knowledge god">
                 <button class="correct" onclick="checkAnswer(this, 'Knowledge')">Knowledge</button>
                 <button onclick="checkAnswer(this, 'Vines')">Vines</button>
                 <button onclick="checkAnswer(this, 'Witchcraft')">Witchcraft</button>
@@ -53,6 +50,7 @@
 
         <div class="statue4">
             <div class="button-container">
+                <img src="images/vines.png" alt="vines god">
                 <button onclick="checkAnswer(this, 'Knowledge')">Knowledge</button>
                 <button class="correct" onclick="checkAnswer(this, 'Vines')">Vines</button>
                 <button onclick="checkAnswer(this, 'Witchcraft')">Witchcraft</button>
@@ -63,6 +61,7 @@
 
         <div class="statue5">
             <div class="button-container">
+                <img src="images/deserts.png" alt="deserts god">
                 <button onclick="checkAnswer(this, 'Knowledge')">Knowledge</button>
                 <button onclick="checkAnswer(this, 'Vines')">Vines</button>
                 <button onclick="checkAnswer(this, 'Witchcraft')">Witchcraft</button>
@@ -71,11 +70,13 @@
             </div>
         </div>
     </div>
+    <audio id="backgroundMusic" src="music/puzzle2.mp3" preload="auto" loop></audio>
 
     <script>
         let lives = 3;
         let score = 0;
     const livesElement = document.getElementById('current-lives');
+    let musicPlay = false;
 
     function checkAnswer(button, correctAns) {
         button.classList.add("clicked");
@@ -98,6 +99,21 @@
             window.location.href = 'win.html';
         }
         return isCorrect;
+    }
+    function toggleMusic() {
+        let music = document.getElementById("backgroundMusic");
+        let button = document.querySelector(".music");
+        if(musicPlay)
+        {
+          music.pause();
+          button.textContent = "Play Music"
+        }
+        else
+        {
+          music.play();
+          button.textContent = "Pause Music"
+        }
+        musicPlay = !musicPlay;
     }
     </script>
 </body>
